@@ -156,6 +156,8 @@ header {
 
 .PROFIEL_text {
     margin-bottom: 50px;
+    font-family: 'Noto Sans JP';
+    font-size: 15px;
 }
 
 .view_more {
@@ -222,6 +224,129 @@ header {
 .Works_item.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+.works_imformation {
+    border-bottom: solid 0.7px;
+    border-color: #CACACA;
+    margin-bottom: 20px;
+
+}
+
+.works_top {
+    width: 88%;
+    margin: auto;
+    padding-top: 60px;
+}
+
+.works_imformation_subtitile {
+    font-family: 'Noto Sans JP';
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.works_imformation_text {
+    font-family: 'Noto Sans JP';
+    margin-top: 10px;
+    font-size: 13px;
+    margin-bottom: 20px;
+
+}
+
+.works_url {
+    font-family: 'Noto Sans JP';
+    margin-top: 10px;
+    font-size: 12px;
+    margin-bottom: 20px;
+
+}
+
+.works_top_titile {
+    font-family: 'Noto Sans JP';
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+.works_top_subtitile {
+    font-family: 'Noto Sans JP';
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: 400;
+
+}
+
+.PROFIEL_top {
+    width: 92%;
+    margin: auto;
+    padding-top: 60px;
+
+}
+
+.SKILLS_text {
+    font-family: 'Noto Sans JP';
+    font-size: 15px;
+
+}
+.works_imformation {
+    border-bottom: solid 0.7px;
+    border-color: #CACACA;
+    margin-bottom: 20px;
+
+}
+
+.works_top {
+    width: 88%;
+    margin: auto;
+    padding-top: 60px;
+}
+
+.works_imformation_subtitile {
+    font-family: 'Noto Sans JP';
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.works_imformation_text {
+    font-family: 'Noto Sans JP';
+    margin-top: 10px;
+    font-size: 13px;
+    margin-bottom: 20px;
+
+}
+
+.works_url {
+    font-family: 'Noto Sans JP';
+    margin-top: 10px;
+    font-size: 12px;
+    margin-bottom: 20px;
+
+}
+
+.works_top_titile {
+    font-family: 'Noto Sans JP';
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+.works_top_subtitile {
+    font-family: 'Noto Sans JP';
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: 400;
+
+}
+
+.PROFIEL_top {
+    width: 92%;
+    margin: auto;
+    padding-top: 60px;
+
+}
+
+.SKILLS_text {
+    font-family: 'Noto Sans JP';
+    font-size: 15px;
 }
 
 
