@@ -6,6 +6,10 @@
     /* ボックスモデルをborder-boxにする */
 }
 
+/* ===================================
+    共通のスタイル
+=================================== */
+
 html { 
     overflow-x: hidden; 
     overflow-y: scroll;
@@ -38,6 +42,66 @@ img {
     vertical-align: middle;
     /* 画像の下にできる余白をなくす */
 }
+
+/* ===================================
+    header
+=================================== */
+#header {
+    position: fixed;
+    z-index: 100;
+    background-color: #fff;
+    display: block;
+    width: 100vw;    
+}
+
+header {
+    width: 92%;
+    margin: 0 auto;
+}
+
+.header-inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo_img{
+    width: 50%;
+}
+
+.logo_wrap{
+    display: block;
+    width: 30%;
+    padding: 10px 0;
+}
+
+/* ハンバーガーメニュー */
+.hamburger {
+    padding-top: 20px;
+    padding-right: 0;
+}
+
+.hamburger .hamburger-inner,
+.hamburger .hamburger-inner::before,
+.hamburger .hamburger-inner::after {
+    height: 3px; /* 線の太さ */
+    width: 30px; /* 線の長さ */
+}
+
+.hamburger-inner::after {
+    content: "MENU";
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.is-active .hamburger-inner::after {
+    content: "";
+}
+
+
+/* ===================================
+    メインセクション
+=================================== */
 
 .Workslist {
     display: flex;
@@ -145,107 +209,8 @@ img {
     letter-spacing: 3.5px;
 }
 
-#header {
-    position: fixed;
-    z-index: 100;
-    background-color: #fff;
-    display: block;
-    width: 100vw;    
-}
-
-/* ハンバーガーメニュー　装飾 */
-/*==================================================
-　5-2-4 MENUがCLOSEに
-===================================*/
-
-/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
-.openbtn{
-	/*ボタン内側の基点となるためrelativeを指定。
-追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
-	position: relative;
-	cursor: pointer;
-    width: 50px;
-    height:50px;
-	border-radius: 5px;
-    margin-right: 20px;
-}
-
-/*ボタン内側*/
-.openbtn span{
-    display: inline-block;
-    transition: all .4s;/*アニメーションの設定*/
-    position: absolute;
-    left: 14px;
-    height: 2px;
-    border-radius: 5px;
-	background: #333;
-  	width: 45%;
-  }
 
 
-.openbtn span:nth-of-type(1) {
-	top:13px;	
-}
-
-.openbtn span:nth-of-type(2) {
-	top:19px;
-}
-
-.openbtn span:nth-of-type(3) {
-	top:25px;
-}
-
-.openbtn span:nth-of-type(3)::after {
-	content:"Menu";/*3つ目の要素のafterにMenu表示を指定*/
-	position: absolute;
-	top:5px;
-	left:-2px;
-	color:#333;
-	font-size: 0.6rem;
-	text-transform: uppercase;
-}
-
-/*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
-
-.openbtn.active span:nth-of-type(1) {
-    top: 14px;
-    left: 18px;
-    transform: translateY(6px) rotate(-45deg);
-    width: 30%;
-}
-
-.openbtn.active span:nth-of-type(2) {
-	opacity: 0;
-}
-
-.openbtn.active span:nth-of-type(3){
-    top: 26px;
-    left: 18px;
-    transform: translateY(-6px) rotate(45deg);
-    width: 30%;
-}
-
-.openbtn.active span:nth-of-type(3)::after {
-	content:"Close";/*3つ目の要素のafterにClose表示を指定*/
-    transform: translateY(0) rotate(-45deg);
-	top:5px;
-	left:4px;
-}
-
-.header-inner{
-    display: flex;
-    justify-content: space-between;
-}
-
-.logo_img{
-    width: 100%;
-}
-
-.logo_wrap{
-    display: block;
-    width: 30%;
-    padding: 10px;
-}
 
 /* スクロール時にふわっと表示 */
 .Works_item {
@@ -257,4 +222,15 @@ img {
 .Works_item.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+/*
+===================================
+    SPバージョンのスタイル
+===================================*/
+@media screen and (max-width: 768px) {
+    .logo_img {
+        width: 100%;
+    }
 }

@@ -1,31 +1,37 @@
+// jQueryでヘッダー・フッターを読み込み
 $(function () {
-    $("#header").load("header.html");
-    $("#footer").load("footer.html");
+    $("#header").load("header.html", function () {
+        // ヘッダーが読み込まれた後に実行される
 
-    // ハンバーガーメニュー
-    $(".openbtn").click(function () {
-        console.log('aaa');
-    $(this).toggleClass('active');
+        const hamburger = document.querySelector('.hamburger');
+        if (hamburger) {
+            hamburger.addEventListener('click', function () {
+                this.classList.toggle('is-active');
+            });
+        }
     });
+
+    $("#footer").load("footer.html");
 });
 
-
 // スクロール時にふわっと表示
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
     const items = document.querySelectorAll('.Works_item');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // 一度だけ表示させる場合
-            }
+    if (items.length > 0) {
+        const observer = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
         });
-    }, {
-        threshold: 0.1 // 少しでも見えたら表示
-    });
 
-    items.forEach(item => {
-        observer.observe(item);
-    });
+        items.forEach(function (item) {
+            observer.observe(item);
+        });
+    }
 });
