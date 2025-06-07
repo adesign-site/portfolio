@@ -1,0 +1,260 @@
+/* 基本的なリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* ボックスモデルをborder-boxにする */
+}
+
+html { 
+    overflow-x: hidden; 
+    overflow-y: scroll;
+}
+
+body {
+    font-family: sans-serif;
+    /* フォントを指定 */
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    /* リストの黒点を消す */
+}
+
+a {
+    text-decoration: none;
+    /* リンクの下線を消す */
+    color: inherit;
+    /* 親要素の文字色を継承 */
+}
+
+img {
+    max-width: 100%;
+    /* 画像が親要素からはみ出さないように */
+    height: auto;
+    vertical-align: middle;
+    /* 画像の下にできる余白をなくす */
+}
+
+.Workslist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.Works_item {
+    width: calc((100% - 20px) / 2);
+    margin-bottom: 30px
+}
+
+.wrap {
+    width: 92%;
+    margin: auto;
+    padding-top: 450px;
+}
+
+.Section_title {
+    border-left: 6px solid;
+    border-image: linear-gradient(0deg, #FFF9CE 0%, #FAF9D1 11%, #DCF8E3 49%, #B9F0F5 100%) 1;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    font-family: 'Montserrat';
+    font-weight: 550;
+    letter-spacing: 1.8px;
+    font-size: 22px;
+    line-height: 0.9;
+}
+
+.Section_title_span {
+    font-family: 'Noto Sans JP';
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.Works_subtitle {
+    font-family: 'Montserrat';
+    font-size: 12px;
+
+
+}
+
+.Works_title {
+    font-family: 'Noto Sans JP';
+    font-size: 15px;
+}
+
+.PROFIEL_image {
+    margin-bottom: 10px;
+}
+
+.PROFIEL_text {
+    margin-bottom: 50px;
+}
+
+.view_more {
+    background: transparent linear-gradient(270deg, #FFF9CE 0%, #DCF8E3 49%, #B9F0F5 100%) 0% 0% no-repeat padding-box;
+    padding: 15px 0;
+    letter-spacing: 1.7px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    margin: auto;
+    display: block;
+    text-align: center;
+    width: 70%;
+    border-radius: 50px;
+    position: relative;
+}
+
+.view_more::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    right: 1.5rem;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    transform: rotate(-45deg);
+    top: calc((100% - 12px) / 2);
+}
+
+.MV_1 {
+    position: absolute;
+    z-index: 1;
+    width: 70%;
+    right: 0;
+    top: 71px;
+}
+
+.MV_2 {
+    position: absolute;
+    width: 70%;
+    right: 8%;
+    top: 158px;
+}
+
+.PORTFOLIO_title {
+    position: absolute;
+    z-index: 2;
+    top: 80px;
+    left: 22px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    letter-spacing: 3.5px;
+}
+
+#header {
+    position: fixed;
+    z-index: 100;
+    background-color: #fff;
+    display: block;
+    width: 100vw;    
+}
+
+/* ハンバーガーメニュー　装飾 */
+/*==================================================
+　5-2-4 MENUがCLOSEに
+===================================*/
+
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.openbtn{
+	/*ボタン内側の基点となるためrelativeを指定。
+追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+	position: relative;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+	border-radius: 5px;
+    margin-right: 20px;
+}
+
+/*ボタン内側*/
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;/*アニメーションの設定*/
+    position: absolute;
+    left: 14px;
+    height: 2px;
+    border-radius: 5px;
+	background: #333;
+  	width: 45%;
+  }
+
+
+.openbtn span:nth-of-type(1) {
+	top:13px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:19px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:25px;
+}
+
+.openbtn span:nth-of-type(3)::after {
+	content:"Menu";/*3つ目の要素のafterにMenu表示を指定*/
+	position: absolute;
+	top:5px;
+	left:-2px;
+	color:#333;
+	font-size: 0.6rem;
+	text-transform: uppercase;
+}
+
+/*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
+
+.openbtn.active span:nth-of-type(1) {
+    top: 14px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 26px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(3)::after {
+	content:"Close";/*3つ目の要素のafterにClose表示を指定*/
+    transform: translateY(0) rotate(-45deg);
+	top:5px;
+	left:4px;
+}
+
+.header-inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo_img{
+    width: 100%;
+}
+
+.logo_wrap{
+    display: block;
+    width: 30%;
+    padding: 10px;
+}
+
+/* スクロール時にふわっと表示 */
+.Works_item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.Works_item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
