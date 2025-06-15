@@ -35,3 +35,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// ハンバーガーメニュー下のテキスト表示
+  $(function () {
+$('.hamburger').on('click', function () {
+    $(this).toggleClass('is-active');
+    
+    // テキスト切り替え
+    const $label = $(this).find('.hamburger-label');
+    if ($(this).hasClass('is-active')) {
+            $label.text('CLOSE');
+        } else {
+            $label.text('MENU');
+        }
+    });
+});

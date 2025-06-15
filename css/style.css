@@ -10,8 +10,8 @@
     共通のスタイル
 =================================== */
 
-html { 
-    overflow-x: hidden; 
+html {
+    overflow-x: hidden;
     overflow-y: scroll;
 }
 
@@ -51,7 +51,7 @@ img {
     z-index: 100;
     background-color: #fff;
     display: block;
-    width: 100vw;    
+    width: 100vw;
 }
 
 header {
@@ -59,16 +59,16 @@ header {
     margin: 0 auto;
 }
 
-.header-inner{
+.header-inner {
     display: flex;
     justify-content: space-between;
 }
 
-.logo_img{
+.logo_img {
     width: 50%;
 }
 
-.logo_wrap{
+.logo_wrap {
     display: block;
     width: 30%;
     padding: 10px 0;
@@ -76,26 +76,36 @@ header {
 
 /* ハンバーガーメニュー */
 .hamburger {
+    display: flex;
+    flex-direction: column;
     padding-top: 20px;
     padding-right: 0;
+    gap: 6px;
+    /* 線とMENUの間隔を調整 */
 }
 
 .hamburger .hamburger-inner,
 .hamburger .hamburger-inner::before,
 .hamburger .hamburger-inner::after {
-    height: 3px; /* 線の太さ */
-    width: 30px; /* 線の長さ */
+    height: 1.5px;
+    /* 線の太さ */
+    width: 30px;
+    /* 線の長さ */
 }
 
 .hamburger-inner::after {
-    content: "MENU";
-    font-size: 12px;
+    font-size: 10px;
+    font-family: 'Montserrat';
     display: flex;
     justify-content: center;
+    margin-top: 2px;
 }
 
-.is-active .hamburger-inner::after {
-    content: "";
+.hamburger-label {
+  font-size: 10px;
+  text-align: center;
+  display: block;
+  margin-top: 6px;
 }
 
 
@@ -150,14 +160,10 @@ header {
     font-size: 15px;
 }
 
-.PROFIEL_image {
-    margin-bottom: 10px;
-}
-
-.PROFIEL_text {
-    margin-bottom: 50px;
-    font-family: 'Noto Sans JP';
-    font-size: 15px;
+.img_works_thumb {
+    border-radius: 7px;
+    box-shadow: 2px 2px 7px 0px rgba(134, 134, 134, 0.4);
+    margin-bottom: 7px;
 }
 
 .view_more {
@@ -211,6 +217,10 @@ header {
     letter-spacing: 3.5px;
 }
 
+.top_section {
+    padding-bottom: 80px;
+}
+
 
 
 
@@ -225,6 +235,7 @@ header {
     opacity: 1;
     transform: translateY(0);
 }
+
 .works_imformation {
     border-bottom: solid 0.7px;
     border-color: #CACACA;
@@ -232,53 +243,129 @@ header {
 
 }
 
+/* ===================================
+    作品ページ
+=================================== */
+
 .works_top {
-    width: 88%;
+    width: 85%;
     margin: auto;
-    padding-top: 60px;
-}
-
-.works_imformation_subtitile {
-    font-family: 'Noto Sans JP';
-    font-weight: 400;
-    font-size: 16px;
-}
-
-.works_imformation_text {
-    font-family: 'Noto Sans JP';
-    margin-top: 10px;
-    font-size: 13px;
-    margin-bottom: 20px;
-
-}
-
-.works_url {
-    font-family: 'Noto Sans JP';
-    margin-top: 10px;
-    font-size: 12px;
-    margin-bottom: 20px;
+    padding-top: 80px;
 
 }
 
 .works_top_titile {
+    border-left: 6px solid;
+    border-image: linear-gradient(0deg, #FFF9CE 0%, #FAF9D1 11%, #DCF8E3 49%, #B9F0F5 100%) 1;
+    padding-left: 10px;
     font-family: 'Noto Sans JP';
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 25px;
 
 }
 
 .works_top_subtitile {
     font-family: 'Noto Sans JP';
     margin-bottom: 10px;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 400;
 
 }
 
-.PROFIEL_top {
-    width: 92%;
+.works_imformation {
+    border-bottom: solid 0.7px;
+    border-color: #CACACA;
+    padding: 40px 0px;
+    margin: 0;
+
+}
+
+.works_imformation_subtitile {
+    font-family: 'Noto Sans JP';
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+.works_imformation_text {
+    font-family: 'Noto Sans JP';
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 24px;
+
+}
+
+.works_url {
+    font-family: 'Montserrat';
+    margin-top: 10px;
+    font-size: 12px;
+
+
+}
+
+
+
+
+
+/* ===================================
+    プロフィール
+=================================== */
+
+.PROFILE_top {
+    width: 85%;
     margin: auto;
-    padding-top: 60px;
+    padding-top: 80px
+}
+
+.PROFILE_top_title {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 23px;
+    margin-bottom: 7px;
+    letter-spacing: 1.8px;
+}
+
+.PROFILE_top_subtitle {
+    font-family: 'Noto Sans JP';
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+.PROFILE_image {
+    margin-bottom: 10px;
+}
+
+.PROFILE_name {
+    font-family: 'Noto Sans JP';
+    font-size: 18px;
+}
+
+.PROFILE_name_eng{
+    font-family: 'Montserrat';
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+.PROFILE_text {
+    margin-bottom: 50px;
+    font-family: 'Noto Sans JP';
+    font-size: 13px;
+}
+
+
+.PROFILE_subtitile_number {
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
+
+.PROFILE_subtitile {
+    font-family: 'Noto Sans JP';
+    font-weight: 500;
 
 }
 
@@ -287,67 +374,8 @@ header {
     font-size: 15px;
 
 }
-.works_imformation {
-    border-bottom: solid 0.7px;
-    border-color: #CACACA;
-    margin-bottom: 20px;
 
-}
 
-.works_top {
-    width: 88%;
-    margin: auto;
-    padding-top: 60px;
-}
-
-.works_imformation_subtitile {
-    font-family: 'Noto Sans JP';
-    font-weight: 400;
-    font-size: 16px;
-}
-
-.works_imformation_text {
-    font-family: 'Noto Sans JP';
-    margin-top: 10px;
-    font-size: 13px;
-    margin-bottom: 20px;
-
-}
-
-.works_url {
-    font-family: 'Noto Sans JP';
-    margin-top: 10px;
-    font-size: 12px;
-    margin-bottom: 20px;
-
-}
-
-.works_top_titile {
-    font-family: 'Noto Sans JP';
-    font-size: 20px;
-    font-weight: 500;
-
-}
-
-.works_top_subtitile {
-    font-family: 'Noto Sans JP';
-    margin-bottom: 10px;
-    font-size: 17px;
-    font-weight: 400;
-
-}
-
-.PROFIEL_top {
-    width: 92%;
-    margin: auto;
-    padding-top: 60px;
-
-}
-
-.SKILLS_text {
-    font-family: 'Noto Sans JP';
-    font-size: 15px;
-}
 
 
 /*
