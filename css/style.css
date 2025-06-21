@@ -101,9 +101,137 @@ header {
 }
 
 .hamburger-label {
-  font-size: 10px;
   text-align: start;
   display: block;
+    font-size: 10px;
+    display: block;
+    margin-top: 6px;
+}
+
+
+/* ===================================
+    MV
+=================================== */
+
+/* fv-section: ファーストビュー全体のスタイル */
+.fv-section {
+    position: relative;
+    /* 子要素の絶対配置の基準 */
+    width: 100%;
+    height: 65vh;
+    /* ビューポートの高さに合わせる */
+    overflow: hidden;
+    /* はみ出す部分を隠す */
+    color: #333;
+    /* デフォルトの文字色 */
+}
+
+/* fv-background-arch: アーチ画像コンテナ */
+/* このコンテナは、arch.pngを正確に配置するためのラッパーとして使います */
+.fv-background-arch {
+    position: absolute;
+    /* 上下方向もXDに合わせて調整。例として中央に配置し、transformで微調整 */
+    top: 50%;
+    transform: translateY(-50%);
+    /* 垂直方向の中央揃え */
+    z-index: 1;
+    /* コンテンツより奥に */
+
+    /* 初期状態: 透明 */
+    opacity: 0;
+    /* アニメーション後の状態へのトランジション */
+    transition: opacity 1.5s ease-out;
+    /* フェードインのみ */
+}
+
+/* アニメーションをトリガーするクラス (JavaScriptで追加) */
+.fv-section.is-animated .fv-background-arch {
+    opacity: 1;
+}
+
+/* arch-image: アーチ画像自体のスタイル */
+.arch-image {
+    display: block;
+    /* 不要な余白を消す */
+    /*
+    arch.pngの画像サイズを考慮し、XDの見た目に合わせて具体的なサイズと位置を指定します。
+    例として、画像を画面の高さに合わせて、左に少しはみ出すような配置を試します。
+    この値は、お手元のarch.pngの実際のピクセルサイズとXDでの配置から算出してください。
+    */
+    width: 800px;
+    /* 例: 画像の横幅を固定 (XDのサイズを測って設定) */
+    height: 100vh;
+    /* 画面の高さに合わせる */
+    object-fit: cover;
+    /* 縦横比を維持しつつ、指定した領域を覆う */
+    object-position: left center;
+    /* 画像の左端がコンテナの左端に、上下中央に配置 */
+
+    /* 画像自体を左に少しずらして、左端から顔を出すように調整 */
+    margin-left: -200px;
+    /* 例: 左に200pxはみ出す (調整値) */
+    /* あるいは、fv-background-archのleftを負の値にするのもあり */
+    margin-top: 13vh;
+}
+
+
+/* fv-content: テキストコンテンツのスタイル */
+.fv-content {
+    position: absolute;
+    /* 親要素 .fv-section を基準に配置 */
+    z-index: 2;
+    /* アーチ画像より手前に */
+    text-align: left;
+    /* 左揃えに設定 */
+    color: #333;
+    /* XDの文字色に近い色に調整 */
+    top: 70%;
+    /* 垂直方向の中央 */
+    left: 20%;
+    /* **ここが重要：左から20%の位置に配置 (XDに合わせて調整)** */
+    transform: translateY(-50%);
+    /* 垂直方向の中央揃え */
+    max-width: 600px;
+    /* テキストの最大幅を制限 */
+    width: 80%;
+    /* レスポンシブ対応のため % で指定 */
+
+}
+
+/* fv-title: メインタイトルのスタイル */
+.fv-title {
+    font-family: 'Montserrat';
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 5px;
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+    /* テキストが改行されないように */
+}
+
+/* fv-title-line: タイトルの一行（span要素）ごとのスタイル */
+.fv-title-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* 各行のアニメーションディレイを設定 */
+.fv-section.is-animated .fv-title-line:nth-child(1) {
+    transition-delay: 1.0s;
+    /* アーチ画像の表示完了後に開始 */
+}
+
+.fv-section.is-animated .fv-title-line:nth-child(2) {
+    transition-delay: 1.3s;
+}
+
+/* アニメーション後の状態 */
+.fv-section.is-animated .fv-title-line {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hamburger_modal {
@@ -129,8 +257,151 @@ header {
 
 
 
+/* fv-subtitle: サブタイトルのスタイル */
+.fv-subtitle {
+    font-family: 'Montserrat';
+    font-weight: 550;
+    display: flex;
+    /* 横線とテキストを横並びにするため */
+    align-items: center;
+    gap: 10px;
+    /* 線とテキストの間隔 */
+    letter-spacing: 0.15em;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.0s ease-out, transform 1.0s ease-out;
+    transition-delay: 1.6s;
+    /* 最後のタイトルアニメーションの後に開始 */
+}
+
+/* アニメーション後の状態 */
+.fv-section.is-animated .fv-subtitle {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* line-deco: サブタイトルの前の横線 */
+.fv-subtitle .line-deco {
+    display: block;
+    width: 50px;
+    /* 線の長さ */
+    height: 1.2px;
+    /* 線の太さ */
+    background-color: #333;
+    /* 線の色 */
+    opacity: 0;
+    transform: scaleX(0);
+    /* 初期状態は横幅0 */
+    transform-origin: left;
+    /* 左から広がる */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition-delay: 1.8s;
+    /* サブタイトル本体より少し遅れて開始 */
+}
+
+/* アニメーション後の状態 */
+.fv-section.is-animated .fv-subtitle .line-deco {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+
+
+
+
+/* スマートフォン対応（任意） */
+@media (max-width: 768px) {
+    .fv-title {
+        font-size: 2.1em;
+        /* スマートフォンでの文字サイズ調整 */
+    }
+
+    .fv-subtitle {
+        font-size: 0.85em;
+    }
+
+    .fv-content {
+        left: 50%;
+        /* モバイルでは中央寄せ */
+        transform: translate(-50%, -50%);
+        /* 垂直・水平中央寄せ */
+        width: 90%;
+    }
+
+
+    .arch-image {
+        /* モバイルでの画像表示調整。XDでどう見えるかによる */
+        width: 100vw;
+        /* ビューポート幅いっぱいに */
+        height: auto;
+        /* 縦横比を維持 */
+        margin-left: 0;
+        /* はみ出しなし */
+        /* top/left/bottom/right のabsolute指定も検討 */
+        object-position: center bottom;
+        /* 下中央に配置など */
+    }
+
+    .fv-background-arch {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: none;
+        /* 中央寄せのtransformをリセット */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===================================
-    メインセクション
+   コンテンツ
 =================================== */
 
 .Workslist {
@@ -141,13 +412,12 @@ header {
 
 .Works_item {
     width: calc((100% - 20px) / 2);
-    margin-bottom: 30px
+    margin-bottom: 50px
 }
 
 .wrap {
     width: 92%;
     margin: auto;
-    padding-top: 450px;
 }
 
 .Section_title {
@@ -325,6 +595,10 @@ header {
 
 }
 
+.returngiftflyer_img {
+    margin-bottom: 10px;
+}
+
 
 
 
@@ -364,7 +638,7 @@ header {
     font-size: 18px;
 }
 
-.PROFILE_name_eng{
+.PROFILE_name_eng {
     font-family: 'Montserrat';
     font-size: 15px;
     font-weight: 500;
@@ -405,5 +679,83 @@ header {
 @media screen and (max-width: 768px) {
     .logo_img {
         width: 100%;
+    }
+}
+
+
+
+
+
+
+/*
+===================================
+    フッター
+===================================*/
+
+/* フッター全体のスタイル */
+footer {
+    background-color: #EFEFEF;
+    padding: 20px 0;
+    /* 上下のパディング */
+    width: 100%;
+    /* 幅を100%に設定 */
+    /* 必要に応じてposition: fixed; bottom: 0; を追加してフッターを固定することもできますが、
+     今回は画像のような通常のフッターを想定しています */
+    height: 40vh;
+}
+
+/* フッターナビゲーションのスタイル */
+.footer-nav ul {
+    list-style: none;
+    /* リストの黒点を削除 */
+    padding: 0;
+    /* パディングをリセット */
+    margin: 0;
+    /* マージンをリセット */
+    display: flex;
+    /* Flexboxを使って子要素を横並びにする */
+    flex-direction: column;
+    /* 子要素を縦に並べる */
+}
+
+.footer-nav li {
+    margin-bottom: 15px;
+    /* 各項目の下部に余白 */
+}
+
+.footer-nav li:last-child {
+    margin-bottom: 0;
+    /* 最後の項目は下余白なし */
+}
+
+.footer-nav a {
+    text-decoration: none;
+    /* 下線を削除 */
+    color: #333;
+    /* 文字色を調整 */
+    font-size: 1.2em;
+    /* フォントサイズを大きめに設定 */
+    font-weight: bold;
+    /* フォントを太く */
+    display: block;
+    /* リンク全体をクリック可能に */
+    padding: 5px 10px;
+    /* クリックしやすいようにパディングを追加 */
+    font-family: 'Montserrat';
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.footer-nav a:hover {
+    color: #007bff;
+    /* ホバー時の文字色 */
+}
+
+/* モバイル版のメディアクエリ (任意) */
+/* 例えば、特定の幅以下の場合のみ適用したいスタイルがある場合 */
+@media (max-width: 768px) {
+    .footer-nav a {
+        font-size: 1.1em;
+        /* モバイルで少し小さくする */
     }
 }

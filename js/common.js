@@ -72,3 +72,18 @@ function isInViewport($element) {
 
     return elementBottom > windowTop + ($(window).height() * 0.1) && elementTop < windowBottom;
 }
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 既存のハンバーガーメニューのコードはそのまま
+
+    // ファーストビューのアニメーション
+    const fvSection = document.querySelector('.fv-section');
+
+    if (fvSection) {
+        setTimeout(() => {
+            fvSection.classList.add('is-animated');
+        }, 500); // 0.5秒後にアニメーション開始
+    }
+});
