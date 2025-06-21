@@ -1,52 +1,74 @@
-// jQueryでヘッダー・フッターを読み込み
 $(function () {
-    $("#header").load("header.html", function () {
-        // ヘッダーが読み込まれた後に実行される
-
-        const hamburger = document.querySelector('.hamburger');
-        if (hamburger) {
-            hamburger.addEventListener('click', function () {
-                this.classList.toggle('is-active');
-            });
-        }
-    });
-
-    $("#footer").load("footer.html");
-});
-
-// スクロール時にふわっと表示
-document.addEventListener("DOMContentLoaded", function () {
-    const items = document.querySelectorAll('.Works_item');
-
-    if (items.length > 0) {
-        const observer = new IntersectionObserver(function (entries, observer) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        items.forEach(function (item) {
-            observer.observe(item);
-        });
-    }
-});
-
-// ハンバーガーメニュー下のテキスト表示
-  $(function () {
-$('.hamburger').on('click', function () {
-    $(this).toggleClass('is-active');
+    const nav = document.getElementById('global-nav');
     
-    // テキスト切り替え
-    const $label = $(this).find('.hamburger-label');
-    if ($(this).hasClass('is-active')) {
-            $label.text('CLOSE');
+    // ヘッダー・フッターを読み込み
+    $("#header").load("header.html", function () {
+        initHamburgerMenu(); // ヘッダー読み込み後にハンバーガーメニュー初期化
+    });
+    $("#footer").load("footer.html");
+
+    // スクロール時にふわっと表示
+    $(window).on('scroll', function () {
+        $('.Works_item').each(function () {
+            const $item = $(this);
+            if (isInViewport($item) && !$item.hasClass('is-visible')) {
+                $item.addClass('is-visible');
+            }
+        });
+    }).trigger('scroll'); // 初回にもチェック
+});
+
+// ハンバーガーメニュー初期化
+function initHamburgerMenu() {
+    $('.hamburger').on('click', function (e) {
+        e.stopPropagation();
+        const $this = $(this).toggleClass('is-active');
+        // テキストの切り替え
+        $this.find('.hamburger-label').text($this.hasClass('is-active') ? 'CLOSE' : 'OPEN');
+
+        // ナビゲーションの表示切り替え
+        if ($this.hasClass('is-active')) {
+            $('.hamburger_modal')
+                .css({ display: 'block', right: '-100%' })
+                .animate({ right: '0' }, 300);
         } else {
-            $label.text('MENU');
+            $('.hamburger_modal')
+                .animate({ right: '-100%' }, 300, function () {
+                    $(this).css('display', 'none');
+                });
         }
     });
-});
+
+    // モーダル外クリックで閉じる
+    $(document).on('click', function (e) {
+        const $modal = $('.hamburger_modal');
+        const $hamburger = $('.hamburger');
+        if (
+            $modal.is(':visible') &&
+            !$modal.is(e.target) &&
+            $modal.has(e.target).length === 0 &&
+            !$hamburger.is(e.target) &&
+            $hamburger.has(e.target).length === 0
+        ) {
+            $hamburger.removeClass('is-active').find('.hamburger-label').text('OPEN');
+            $modal.animate({ right: '-100%' }, 300, function () {
+                $(this).css('display', 'none');
+            });
+        }
+    });
+
+    // モーダル内クリックは伝播させない
+    $('.hamburger_modal').on('click', function (e) {
+        e.stopPropagation();
+    });
+}
+
+// 要素が画面内にあるか判定
+function isInViewport($element) {
+    const windowTop = $(window).scrollTop();
+    const windowBottom = windowTop + $(window).height();
+    const elementTop = $element.offset().top;
+    const elementBottom = elementTop + $element.outerHeight();
+
+    return elementBottom > windowTop + ($(window).height() * 0.1) && elementTop < windowBottom;
+}
