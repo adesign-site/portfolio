@@ -60,7 +60,7 @@ header {
 }
 
 .hamburger {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     padding-top: 20px;
     z-index: 100;
@@ -188,20 +188,27 @@ header {
     top: 0;
     right: 0;
     height: 100vh;
-    width: 25vw;
-    background-color: #fff;
+    width: 100vw;
+    background: linear-gradient(270deg, #FFF9CE 0%, #DCF8E3 49%, #B9F0F5 100%);
     z-index: 10;
 }
 
 .global-nav ul {
     display: flex;
     flex-direction: column;
-    padding-top: 50px;
-    padding-left: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .global-nav li {
     margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.global-nav li:hover {
+    color: #007bff;
+    transition: color 0.3s ease;
 }
 
 /* ===== Worksリスト ===== */
@@ -213,6 +220,7 @@ header {
 .Workslist {
     display: flex;
     flex-wrap: wrap;
+    gap: 30px;
     justify-content: space-between;
 }
 
@@ -222,6 +230,12 @@ header {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.Works_item:hover {
+    transform: scale(1.5);
+    z-index: 1;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
 }
 
 .Works_item.is-visible {
