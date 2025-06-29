@@ -98,10 +98,41 @@ header {
     opacity: 1;
 }
 
-.arch-image {
-    display: block;
-    object-fit: cover;
+.arch-image-self {
+    width: 60%;
+    height: 70vh;
     margin-left: auto;
+    border-top-left-radius: 270px;
+    border-bottom-left-radius: 270px;
+    margin-right: 0;
+    display: block;
+    background: linear-gradient(180deg, #F9F7E8 0%, #AEE6EF 100%);
+    background-size: 100% 200%;
+    animation: arch-bg-flow 3s linear infinite;
+}
+
+/* 背景色が流れるアニメーション + opacity変化 */
+@keyframes arch-bg-flow {
+    0% {
+        background-position: 0% 0%;
+        opacity: 0.8;
+    }
+    25% {
+        background-position: 0% 50%;
+        opacity: 1;
+    }
+    50% {
+        background-position: 0% 100%;
+        opacity: 0.9;
+    }
+    75% {
+        background-position: 0% 50%;
+        opacity: 1;
+    }
+    100% {
+        background-position: 0% 0%;
+        opacity: 0.8;
+    }
 }
 
 .fv-content {
@@ -232,8 +263,9 @@ header {
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.Works_item:hover {
-    transform: scale(1.5);
+.img_works_thumb:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease;
     z-index: 1;
     box-shadow: 0 6px 24px rgba(0,0,0,0.08);
 }
@@ -299,6 +331,19 @@ header {
     width: 40%;
     border-radius: 50px;
     position: relative;
+    animation: view-more-flow 3s linear infinite;
+}
+
+@keyframes view-more-flow {
+    0% {
+        background-position: 0%;
+    }
+    50% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: 0%;
+    }
 }
 
 .view_more::after {
@@ -480,7 +525,6 @@ footer {
         left: 6%;
     }
 
-
     .fv-subtitle .line-deco {
         width: 70px;
         height: 1.5px;
@@ -545,6 +589,14 @@ footer {
 
     .PROFILE_img_txt {
         display: block;
+    }
+
+    .arch-image-self {
+        width: 80%;
+        height: 40vh;
+        margin-left: auto;
+        border-top-left-radius: 200px;
+        border-bottom-left-radius: 200px;
     }
 
     .view_more {
