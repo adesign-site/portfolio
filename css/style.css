@@ -248,8 +248,18 @@ header {
     transition: opacity 0.8s ease, transform 0.6s ease;
 }
 
-/* ===== Worksリスト ===== */
+/* ===== ユーティリティ ===== */
+.gradient-border {
+    border-left: 6px solid;
+    border-image: linear-gradient(0deg, #FFF9CE 0%, #FAF9D1 11%, #DCF8E3 49%, #B9F0F5 100%) 1;
+    padding-left: 10px;
+}
 
+.gradient-bg {
+    background: linear-gradient(270deg, #FFF9CE 0%, #DCF8E3 49%, #B9F0F5 100%);
+}
+
+/* ===== Worksリスト ===== */
 .top_section {
     margin-bottom: 50px;
 }
@@ -269,9 +279,15 @@ header {
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+.img_works_thumb {
+    border-radius: 7px;
+    box-shadow: 2px 2px 7px 0px rgba(134, 134, 134, 0.4);
+    margin-bottom: 7px;
+    transition: all 0.5s ease;
+}
+
 .img_works_thumb:hover {
     transform: scale(1.1);
-    transition: all 0.5s ease;
     z-index: 1;
     box-shadow: 0 6px 24px rgba(0,0,0,0.08);
 }
@@ -353,6 +369,7 @@ header {
     text-align: center;
     width: 40%;
     border-radius: 50px;
+    margin-top: 30px;
     position: relative;
     animation: view-more-flow 3s linear infinite;
 }
@@ -367,7 +384,6 @@ header {
     100% {
         background-position: 0%;
     }
-    margin-top: 40px;
 }
 
 .view_more::after {
@@ -386,7 +402,7 @@ header {
 .works_top {
     width: 85%;
     margin: auto;
-    padding-top: 80px;
+    padding-top: 85px;
 }
 
 .works_top_titile {
@@ -586,20 +602,23 @@ footer {
 
 
     .Works_item {
-        width: calc((100% - 20px) / 2);
-        margin-bottom: 50
-            /* ===== Worksリスト ===== */
-            px;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
+        width: calc((100% - 30px) / 2);
+        margin-bottom: 50px;
     }
 
     .Section_title {
+        border-left: 6px solid;
+        border-image: linear-gradient(0deg, #FFF9CE 0%, #FAF9D1 11%, #DCF8E3 49%, #B9F0F5 100%) 1;
+        padding-left: 10px;
+        margin-bottom: 30px;
+        font-family: 'Montserrat';
+        font-weight: 550;
+        letter-spacing: 1.8px;
+        font-size: 22px;
+        line-height: 0.9;
         opacity: 0;
         transform: translateY(20px);
         transition: opacity 0.6s ease, transform 0.6s ease;
-
     }
 
     .wrap {
