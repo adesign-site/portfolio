@@ -12,7 +12,7 @@ html {
 
 body {
     font-family: sans-serif;
-    line-height: 1.6;
+    line-height: 1.3;
     color: #333;
 }
 
@@ -64,6 +64,7 @@ header {
     flex-direction: column;
     padding-top: 20px;
     z-index: 100;
+    padding-right: 0px !important;
 }
 
 .hamburger .hamburger-inner,
@@ -78,6 +79,8 @@ header {
     font-size: 10px;
     margin-top: 6px;
 }
+
+
 
 /* ===== ファーストビュー ===== */
 .fv-section {
@@ -100,7 +103,7 @@ header {
 
 .arch-image-self {
     width: 60%;
-    height: 70vh;
+    height: 87vh;
     margin-left: auto;
     border-top-left-radius: 270px;
     border-bottom-left-radius: 270px;
@@ -117,18 +120,22 @@ header {
         background-position: 0% 0%;
         opacity: 0.8;
     }
+
     25% {
         background-position: 0% 50%;
         opacity: 1;
     }
+
     50% {
         background-position: 0% 100%;
         opacity: 0.9;
     }
+
     75% {
         background-position: 0% 50%;
         opacity: 1;
     }
+
     100% {
         background-position: 0% 0%;
         opacity: 0.8;
@@ -137,7 +144,7 @@ header {
 
 .fv-content {
     position: absolute;
-    bottom: 10%;
+    bottom: -4%;
     left: 5%;
     z-index: 2;
     text-align: left;
@@ -220,7 +227,7 @@ header {
     right: 0;
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(270deg, #FFF9CE 0%, #DCF8E3 49%, #B9F0F5 100%);
+    background: linear-gradient(270deg, #F9F7E8 0%, #D2F2F5 100%);
     z-index: 10;
 }
 
@@ -235,10 +242,12 @@ header {
 .global-nav li {
     margin-bottom: 20px;
     font-size: 20px;
+    font-family: 'Montserrat';
+
 }
 
 .global-nav li:hover {
-    color: #007bff;
+    color: #C1C1C1;
     transition: color 0.3s ease;
 }
 
@@ -289,7 +298,7 @@ header {
 .img_works_thumb:hover {
     transform: scale(1.1);
     z-index: 1;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
 }
 
 .fadeIn.is-visible {
@@ -340,20 +349,26 @@ header {
 
 .PROFILE_img_txt {
     display: flex;
-    align-items: center; /* 要素を垂直方向に中央揃えにします */
-    gap: 50px; /* 画像とテキストの間に20pxの隙間を作ります */
+    align-items: center;
+    /* 要素を垂直方向に中央揃えにします */
+    gap: 50px;
+    /* 画像とテキストの間に20pxの隙間を作ります */
 }
 
 .PROFILE_image {
-    max-width: 1000px; /* 画像の最大幅を300pxに設定します */
-    width: 100%; /* 親要素の幅の40%を画像が占めるようにします */
-    height: auto; /* 画像のアスペクト比を維持します */
+    max-width: 1000px;
+    /* 画像の最大幅を300pxに設定します */
+    width: 100%;
+    /* 親要素の幅の40%を画像が占めるようにします */
+    height: auto;
+    /* 画像のアスペクト比を維持します */
     display: block;
 }
 
 .PROFILE_text_wrap {
     /* margin-leftはgapプロパティが代わりとなるため削除します */
-    flex-grow: 1; /* 残りのスペースをテキストが占めるようにします */
+    flex-grow: 1;
+    /* 残りのスペースをテキストが占めるようにします */
 }
 
 
@@ -378,9 +393,11 @@ header {
     0% {
         background-position: 0%;
     }
+
     50% {
         background-position: 100%;
     }
+
     100% {
         background-position: 0%;
     }
@@ -442,14 +459,15 @@ header {
     line-height: 24px;
 }
 
-.works_url {
-    font-family: 'Montserrat';
-    margin-top: 10px;
-    font-size: 12px;
-}
 
 .returngiftflyer_img {
     margin-bottom: 10px;
+}
+
+
+.design_image {
+    text-align: center;
+    padding: 50px 150px;
 }
 
 /* ===== プロフィール ===== */
@@ -475,6 +493,11 @@ header {
 }
 
 
+.PROFILE_Section_wrap {
+    margin-top: 80px;
+}
+
+
 
 .PROFILE_name {
     font-family: 'Noto Sans JP';
@@ -491,6 +514,8 @@ header {
     margin-bottom: 50px;
     font-family: 'Noto Sans JP';
     font-size: 13px;
+    line-height: 24px;
+    margin-top: 15px;
 }
 
 .PROFILE_subtitle_number {
@@ -512,10 +537,10 @@ header {
 /* ===== フッター ===== */
 footer {
     background-color: #EFEFEF;
-    padding: 20px 0;
+    padding: 30px 0;
     width: 100%;
-    height: 40vh;
-    margin-top: 90px;
+    height: 50vh;
+    margin-top: 150px;
 }
 
 .footer-nav ul {
@@ -545,6 +570,16 @@ footer {
 
 .footer-nav a:hover {
     color: #C1C1C1
+}
+
+
+.footer_name {
+    text-align: center;
+    color: #333;
+    font-family: 'Montserrat';
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    margin-top: 70px;
 }
 
 /* ===== レスポンシブ ===== */
@@ -690,6 +725,11 @@ footer {
     }
 
 
+    .design_image {
+        text-align: center;
+        padding: 20px 0px 0px 0px;
+    }
+
     /* ===== フッター ===== */
 
     .footer-nav a {
@@ -697,9 +737,13 @@ footer {
         font-size: 1.2em;
         font-weight: 500;
         display: block;
-        padding: 5px 20px;
+        padding: 5px 30px;
         font-family: 'Montserrat';
         letter-spacing: 2px;
+    }
+
+    .footer_name {
+        margin-top: 130px;
     }
 
 
