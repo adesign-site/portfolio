@@ -320,7 +320,7 @@ header {
     font-family: 'Montserrat';
     font-weight: 550;
     letter-spacing: 2px;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1;
 }
 
@@ -328,7 +328,7 @@ header {
 .Section_title_span {
     font-family: 'Noto Sans JP';
     font-weight: 400;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .Works_subtitle {
