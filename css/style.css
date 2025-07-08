@@ -241,8 +241,9 @@ header {
 
 .global-nav li {
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: 2rem;
     font-family: 'Montserrat';
+    letter-spacing: 2px;
 
 }
 
@@ -680,7 +681,7 @@ footer {
 
     .img_works_thumb {
         border-radius: 6px;
-        
+
     }
 
 
