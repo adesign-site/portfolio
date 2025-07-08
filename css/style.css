@@ -289,7 +289,7 @@ header {
 }
 
 .img_works_thumb {
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 2px 2px 7px 0px rgba(134, 134, 134, 0.4);
     margin-bottom: 7px;
     transition: all 0.5s ease;
@@ -676,6 +676,13 @@ footer {
         border-top-left-radius: 200px;
         border-bottom-left-radius: 200px;
     }
+
+
+    .img_works_thumb {
+        border-radius: 6px;
+        
+    }
+
 
     .PROFILE_text_wrap {
         margin: auto;
