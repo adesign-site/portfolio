@@ -704,14 +704,14 @@ footer {
 
     .view_more {
         background: linear-gradient(270deg, #FFF9CE 0%, #DCF8E3 49%, #B9F0F5 100%);
-        padding: 15px 0;
+        padding: 21px 0;
         letter-spacing: 1.7px;
         font-family: 'Montserrat';
         font-weight: 500;
         margin: auto;
         display: block;
         text-align: center;
-        width: 70%;
+        width: 35%;
         border-radius: 50px;
         position: relative;
         margin-top: 30px
@@ -753,3 +753,15 @@ footer {
 
 
 }
+
+/* PC以上の時 */
+/* @media (min-width:769px) {
+    .hamburger .hamburger-inner, 
+    .hamburger .hamburger-inner::before, 
+    .hamburger .hamburger-inner::after {
+        height: 3px !important;
+    }
+    .hamburger-box {
+        height: 40px;
+    }
+} */
