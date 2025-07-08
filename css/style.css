@@ -341,11 +341,6 @@ header {
     font-size: 15px;
 }
 
-.img_works_thumb {
-    border-radius: 7px;
-    box-shadow: 2px 2px 7px 0px rgba(134, 134, 134, 0.4);
-    margin-bottom: 7px;
-}
 
 .PROFILE_img_txt {
     display: flex;
