@@ -509,8 +509,8 @@ header {
 .PROFILE_text {
     margin-bottom: 50px;
     font-family: 'Noto Sans JP';
-    font-size: 13px;
-    line-height: 24px;
+    font-size: 0.95rem;
+    line-height: 30px;
     margin-top: 15px;
 }
 
