@@ -319,16 +319,16 @@ header {
     margin-bottom: 40px;
     font-family: 'Montserrat';
     font-weight: 550;
-    letter-spacing: 1.8px;
-    font-size: 22px;
-    line-height: 0.9;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    line-height: 1;
 }
 
 
 .Section_title_span {
     font-family: 'Noto Sans JP';
     font-weight: 400;
-    font-size: 14px;
+    font-size: 1.3rem;
 }
 
 .Works_subtitle {
@@ -450,8 +450,8 @@ header {
 .works_imformation_text {
     font-family: 'Noto Sans JP';
     margin-top: 10px;
-    font-size: 13px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.8rem;
 }
 
 
@@ -644,30 +644,26 @@ footer {
         font-family: 'Montserrat';
         font-weight: 550;
         letter-spacing: 1.8px;
-        font-size: 22px;
+        font-size: 1.4rem;
         line-height: 0.9;
         opacity: 0;
         transform: translateY(20px);
         transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
+
+    .Section_title_span {
+        font-family: 'Noto Sans JP';
+        font-weight: 400;
+        font-size: 1rem;
+    }
+
+
     .wrap {
         width: 92%;
         margin: auto;
     }
 
-
-    .Section_title {
-        border-left: 6px solid;
-        border-image: linear-gradient(0deg, #FFF9CE 0%, #FAF9D1 11%, #DCF8E3 49%, #B9F0F5 100%) 1;
-        padding-left: 10px;
-        margin-bottom: 30px;
-        font-family: 'Montserrat';
-        font-weight: 550;
-        letter-spacing: 1.8px;
-        font-size: 22px;
-        line-height: 0.9;
-    }
 
     .PROFILE_img_txt {
         display: block;
@@ -689,6 +685,12 @@ footer {
         margin-bottom: 10px;
     }
 
+
+
+    .works_imformation_text {
+        font-size: 0.85rem;
+        line-height: 1.5rem;
+    }
 
 
 
