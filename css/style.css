@@ -105,8 +105,8 @@ header {
     width: 60%;
     height: 87vh;
     margin-left: auto;
-    border-top-left-radius: 270px;
-    border-bottom-left-radius: 270px;
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
     margin-right: 0;
     display: block;
     background: linear-gradient(180deg, #F9F7E8 0%, #AEE6EF 100%);
