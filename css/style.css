@@ -494,7 +494,7 @@ header {
 }
 
 .PROFILE_Section_list{
-    margin-bottom: 4rem;
+    margin-bottom: 7rem;
 }
 
 
@@ -715,6 +715,9 @@ footer {
         line-height: 1.6rem;
     }
 
+    .PROFILE_text{
+        font-size: 0.875rem;
+    }
 
 
     .view_more {
