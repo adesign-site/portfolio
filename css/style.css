@@ -415,7 +415,7 @@ header {
 .works_top {
     width: 75%;
     margin: auto;
-    padding-top: 85px;
+    padding-top: 8rem;
 }
 
 .works_top_titile {
@@ -689,6 +689,7 @@ footer {
 
     .works_top{
         width: 80%;
+        padding-top: 5.5rem;
 
     }
 
