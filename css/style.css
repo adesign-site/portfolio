@@ -684,6 +684,11 @@ footer {
 
     }
 
+    .works_top{
+        width: 80%;
+
+    }
+
     .Works_title {
         font-size: 0.8rem;
     }
@@ -703,8 +708,8 @@ footer {
 
 
     .works_imformation_text {
-        font-size: 0.85rem;
-        line-height: 1.5rem;
+        font-size: 0.875rem;
+        line-height: 1.6rem;
     }
 
 
