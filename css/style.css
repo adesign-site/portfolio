@@ -380,7 +380,7 @@ header {
     text-align: center;
     width: 30%;
     border-radius: 50px;
-    margin-top: 30px;
+    margin: 3rem auto;
     position: relative;
     animation: view-more-flow 3s linear infinite;
 }
@@ -737,7 +737,7 @@ footer {
         width: 80%;
         border-radius: 50px;
         position: relative;
-        margin-top: 30px
+        margin: 2rem auto;
     }
 
     .view_more::after {
