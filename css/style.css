@@ -418,7 +418,7 @@ header {
     padding-top: 8rem;
 }
 
-.works_top_titile {
+.works_top_title {
     border-left: 6px solid;
     border-image: linear-gradient(0deg, #FFF9CE 0%, #FAF9D1 11%, #DCF8E3 49%, #B9F0F5 100%) 1;
     padding-left: 10px;
@@ -700,6 +700,10 @@ footer {
     .Works_subtitle {
         font-size: 0.85rem;
     }
+
+
+    
+    
 
     .PROFILE_text_wrap {
         margin: auto;
