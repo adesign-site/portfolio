@@ -330,17 +330,18 @@ header {
 .Section_title_span {
     font-family: 'Noto Sans JP';
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .Works_subtitle {
     font-family: 'Montserrat';
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
 }
 
 .Works_title {
     font-family: 'Noto Sans JP';
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 
@@ -366,6 +367,7 @@ header {
     /* margin-leftはgapプロパティが代わりとなるため削除します */
     flex-grow: 1;
     /* 残りのスペースをテキストが占めるようにします */
+    width: 85%;
 }
 
 
@@ -469,9 +471,9 @@ header {
 
 /* ===== プロフィール ===== */
 .PROFILE_top {
-    width: 85%;
+    width: 80%;
     margin: auto;
-    padding-top: 80px;
+    padding-top: 8rem;
 }
 
 .PROFILE_top_title {
@@ -511,10 +513,9 @@ header {
 }
 
 .PROFILE_text {
-    margin-bottom: 50px;
     font-family: 'Noto Sans JP';
-    font-size: 0.95rem;
-    line-height: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.8rem;
     margin-top: 15px;
 }
 
@@ -531,6 +532,10 @@ header {
 .SKILLS_text {
     font-family: 'Noto Sans JP';
     font-size: 15px;
+}
+
+.PROFILE_info_wrap{
+    margin-bottom: 3rem;
 }
 
 
@@ -695,7 +700,7 @@ footer {
     }
 
     .Works_title {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .Works_subtitle {
@@ -708,6 +713,7 @@ footer {
 
     .PROFILE_text_wrap {
         margin: auto;
+        width: 85%;
     }
 
     .PROFILE_image {
@@ -797,6 +803,7 @@ footer {
     .pc-nav ul {
         display: flex;
         gap: 40px;
+        font-weight: 500;
     }
     .pc-nav li {
         font-family: 'Montserrat';
